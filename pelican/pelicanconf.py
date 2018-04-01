@@ -85,7 +85,8 @@ SITEMAP = {
 
 GOOGLE_ANALYTICS = 'UA-175204-11'
 
-# DISQUS_SITENAME = "alexandrevicenziblog"
+DISQUS_SITENAME = "englishforhackers"
+
 # ADD_THIS_ID = 'ra-55adbb025d4f7e55'
 #
 # STATUSCAKE = {
