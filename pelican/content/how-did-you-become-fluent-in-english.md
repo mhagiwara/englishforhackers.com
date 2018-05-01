@@ -1,4 +1,4 @@
-Title: 「あなたはどのようにして英語が流調になりましたか」に対するHacker Newsのコミュニティの反応
+Title: 「あなたはどのようにして英語が流暢になりましたか」に対するHacker Newsのコミュニティの反応
 Date: 2018-04-29 00:00
 Category: English
 slug: how-did-you-become-fluent-in-english
