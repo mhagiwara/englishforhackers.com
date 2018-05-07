@@ -33,11 +33,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <meta name="author" content="Masato Hagiwara" />
-<meta name="description" content="Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。 Goodfellow 氏は GAN のそもそもの生みの親であり、教科書「Deep Learning」の著者としても有名。 ２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。 生成モデリング 訓練データから確率分布の表現を得る 密度推定 サンプル生成 なぜ生成モデルを研究するか これまでの機械学習 １つの入力に対して１つの出力 高次元確率分布は重要な対象 強化学習の未来、計画をシミュレーションできる 欠損値の扱い、半教師あり学習 マルチモーダル出力 例：ビデオの次のフレームを予測 多くの可能性があるので、ぼやけた画像になってしまう 画像超解像技術 iGAN → 人間が線画を書くだけで、写真クオリティの画像を生成 画像→画像翻訳 条件付きGAN 線画→写真、航空写真→地図 ..." />
+<meta name="description" content="Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。 Goodfellow 氏は GAN のそもそもの生みの親であり、教科書「Deep Learning」の著者としても有名。 ２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。 生成モデリング 訓練データから確率分布の表現を得る 密度推定 サンプル生成 なぜ生成モデルを研究するか これまでの機械学習 １つの入力に対して１つの出力 高次元確率分布は重要な対象 強化学習の未来、計画をシミュレーションできる 欠損値の扱い、半教師あり学習 マルチモーダル出力 例：ビデオの次のフレームを予測 多くの可能性があるので、ぼやけた画像になってしまう 画像超解像技術 iGAN → 人間が線画を書くだけで、写真クオリティの画像を生成 画像→画像翻訳 条件付きGAN 線画→写真、航空写真→地図 …" />
 <meta name="keywords" content="">
 <meta property="og:site_name" content="エンジニア・研究者の英語学習"/>
 <meta property="og:title" content="GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016 まとめ - Ian Goodfellow"/>
-<meta property="og:description" content="Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。 Goodfellow 氏は GAN のそもそもの生みの親であり、教科書「Deep Learning」の著者としても有名。 ２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。 生成モデリング 訓練データから確率分布の表現を得る 密度推定 サンプル生成 なぜ生成モデルを研究するか これまでの機械学習 １つの入力に対して１つの出力 高次元確率分布は重要な対象 強化学習の未来、計画をシミュレーションできる 欠損値の扱い、半教師あり学習 マルチモーダル出力 例：ビデオの次のフレームを予測 多くの可能性があるので、ぼやけた画像になってしまう 画像超解像技術 iGAN → 人間が線画を書くだけで、写真クオリティの画像を生成 画像→画像翻訳 条件付きGAN 線画→写真、航空写真→地図 ..."/>
+<meta property="og:description" content="Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。 Goodfellow 氏は GAN のそもそもの生みの親であり、教科書「Deep Learning」の著者としても有名。 ２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。 生成モデリング 訓練データから確率分布の表現を得る 密度推定 サンプル生成 なぜ生成モデルを研究するか これまでの機械学習 １つの入力に対して１つの出力 高次元確率分布は重要な対象 強化学習の未来、計画をシミュレーションできる 欠損値の扱い、半教師あり学習 マルチモーダル出力 例：ビデオの次のフレームを予測 多くの可能性があるので、ぼやけた画像になってしまう 画像超解像技術 iGAN → 人間が線画を書くだけで、写真クオリティの画像を生成 画像→画像翻訳 条件付きGAN 線画→写真、航空写真→地図 …"/>
 <meta property="og:locale" content="ja_JP"/>
 <meta property="og:url" content="http://englishforhackers.com/nips-2016-generative-adversarial-networks-tutorial-ian-goodfellow.html"/>
 <meta property="og:type" content="article"/>
@@ -64,6 +64,7 @@
 
           <li><a href="http://masatohagiwara.net/" target="_blank">個人ページ</a></li>
           <li><a href="http://www.duolingo.com/" target="_blank">Duolingo</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffbTFvdUXJhN4jTOmylcIRvlntKmaYVkIbYPrbBCPm0iC9Sw/viewform?usp=sf_link" target="_blank">お問い合わせ</a></li>
         </ul>
       </nav>
 
@@ -106,7 +107,7 @@
     <p><a href="https://www.youtube.com/watch?v=AJVyzd0rqdc">Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。</a>
 Goodfellow 氏は GAN のそもそもの生みの親であり、<a href="http://www.deeplearningbook.org/">教科書「Deep Learning」</a>の著者としても有名。
 ２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。</p>
-<p><img alt="GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016" src="images/nips-2016-gan-tutorial.png" /></p>
+<p><img alt="GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016" src="images/nips-2016-gan-tutorial.png"></p>
 <ul>
 <li>
 <p>生成モデリング</p>

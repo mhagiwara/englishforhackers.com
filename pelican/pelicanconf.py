@@ -44,7 +44,8 @@ MAIN_MENU = True
 HOME_HIDE_TAGS = True
 
 LINKS = (('個人ページ', 'http://masatohagiwara.net/'),
-         ('Duolingo', 'http://www.duolingo.com/'))
+         ('Duolingo', 'http://www.duolingo.com/'),
+         ('お問い合わせ', 'https://docs.google.com/forms/d/e/1FAIpQLSffbTFvdUXJhN4jTOmylcIRvlntKmaYVkIbYPrbBCPm0iC9Sw/viewform?usp=sf_link'))
 
 SOCIAL = (('github', 'https://github.com/mhagiwara'),
           ('twitter', 'https://twitter.com/mhagiwara'),

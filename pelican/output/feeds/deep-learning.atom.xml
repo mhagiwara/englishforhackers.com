@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>エンジニア・研究者の英語学習</title><link href="http://englishforhackers.com/" rel="alternate"></link><link href="http://englishforhackers.com/feeds/deep-learning.atom.xml" rel="self"></link><id>http://englishforhackers.com/</id><updated>2018-02-28T00:00:00-05:00</updated><entry><title>GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016 まとめ - Ian Goodfellow</title><link href="http://englishforhackers.com/nips-2016-generative-adversarial-networks-tutorial-ian-goodfellow.html" rel="alternate"></link><published>2018-02-28T00:00:00-05:00</published><updated>2018-02-28T00:00:00-05:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2018-02-28:nips-2016-generative-adversarial-networks-tutorial-ian-goodfellow.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=AJVyzd0rqdc"&gt;Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>エンジニア・研究者の英語学習 - Deep Learning</title><link href="http://englishforhackers.com/" rel="alternate"></link><link href="http://englishforhackers.com/feeds/deep-learning.atom.xml" rel="self"></link><id>http://englishforhackers.com/</id><updated>2018-02-28T00:00:00-05:00</updated><entry><title>GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016 まとめ - Ian Goodfellow</title><link href="http://englishforhackers.com/nips-2016-generative-adversarial-networks-tutorial-ian-goodfellow.html" rel="alternate"></link><published>2018-02-28T00:00:00-05:00</published><updated>2018-02-28T00:00:00-05:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2018-02-28:/nips-2016-generative-adversarial-networks-tutorial-ian-goodfellow.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=AJVyzd0rqdc"&gt;Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。&lt;/a&gt;
 Goodfellow 氏は GAN のそもそもの生みの親であり、&lt;a href="http://www.deeplearningbook.org/"&gt;教科書「Deep Learning」&lt;/a&gt;の著者としても有名。
 ２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016" src="images/nips-2016-gan-tutorial.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016" src="images/nips-2016-gan-tutorial.png"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;生成モデリング&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;訓練データから確率分布の表現を得る&lt;ul&gt;
+&lt;li&gt;密度推定&lt;/li&gt;
+&lt;li&gt;サンプル生成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;なぜ生成モデルを研究するか&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;これまでの機械学習　１つの入力に対して１つの出力&lt;/li&gt;
+&lt;li&gt;高次元確率分布は重要な対象&lt;/li&gt;
+&lt;li&gt;強化学習の未来、計画をシミュレーションできる&lt;/li&gt;
+&lt;li&gt;欠損値の扱い、半教師あり学習&lt;/li&gt;
+&lt;li&gt;マルチモーダル出力&lt;ul&gt;
+&lt;li&gt;例：ビデオの次のフレームを予測&lt;ul&gt;
+&lt;li&gt;多くの可能性があるので、ぼやけた画像になってしまう&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;画像超解像技術&lt;/li&gt;
+&lt;li&gt;iGAN → 人間が線画を書くだけで、写真クオリティの画像を生成&lt;/li&gt;
+&lt;li&gt;画像→画像翻訳　条件付きGAN&lt;ul&gt;
+&lt;li&gt;線画→写真、航空写真→地図 …&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=AJVyzd0rqdc"&gt;Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。&lt;/a&gt;
+Goodfellow 氏は GAN のそもそもの生みの親であり、&lt;a href="http://www.deeplearningbook.org/"&gt;教科書「Deep Learning」&lt;/a&gt;の著者としても有名。
+２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016" src="images/nips-2016-gan-tutorial.png"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;生成モデリング&lt;/p&gt;
@@ -503,7 +533,19 @@ Goodfellow 氏は GAN のそもそもの生みの親であり、&lt;a href="http
 &lt;td&gt;回避方法&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</summary></entry><entry><title>「深層学習と自然言語処理」オックスフォード大/DeepMind 講義まとめ（用語集付き）</title><link href="http://englishforhackers.com/oxford-cs-deepnlp-2017-summary.html" rel="alternate"></link><published>2018-02-08T00:00:00-05:00</published><updated>2018-02-08T00:00:00-05:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2018-02-08:oxford-cs-deepnlp-2017-summary.html</id><summary type="html">&lt;p&gt;&lt;img alt="「深層学習と自然言語処理」オックスフォード大/DeepMind 講義" src="images/oxford-deepnlp-lectures.png" /&gt;&lt;/p&gt;
+&lt;/table&gt;</content></entry><entry><title>「深層学習と自然言語処理」オックスフォード大/DeepMind 講義まとめ（用語集付き）</title><link href="http://englishforhackers.com/oxford-cs-deepnlp-2017-summary.html" rel="alternate"></link><published>2018-02-08T00:00:00-05:00</published><updated>2018-02-08T00:00:00-05:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2018-02-08:/oxford-cs-deepnlp-2017-summary.html</id><summary type="html">&lt;p&gt;&lt;img alt="「深層学習と自然言語処理」オックスフォード大/DeepMind 講義" src="images/oxford-deepnlp-lectures.png"&gt;&lt;/p&gt;
+&lt;p&gt;オックスフォード大の「深層学習と自然言語処理」(&lt;a href="https://github.com/oxford-cs-deepnlp-2017/lectures"&gt;Oxford Deep NLP 2017 course&lt;/a&gt;)の講義メモです。&lt;/p&gt;
+&lt;p&gt;講義ビデオ、スライド、講義の詳細等については、&lt;a href="https://github.com/oxford-cs-deepnlp-2017/lectures"&gt;講義の公式ページ&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;h2&gt;目次&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#lecture1a"&gt;講義1a: 導入 (Phil Blunsom)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lecture1b"&gt;講義1b: 深層ニューラルネットは友だち (Wang Ling)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lecture2a"&gt;講義2a: 単語レベルの意味 (Ed Grefenstette)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lecture2b"&gt;講義2b: 実習の概要 (Chris Dyer)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lecture3"&gt;講義3: 言語モデルとRNN パート1 (Phil Blunsom)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lecture4"&gt;講義4: 言語モデルとRNN パート2 (Phil Blunsom)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lecture5"&gt;講義5: テキスト分類 (Karl Moritz Hermann)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#lecture7"&gt;講義6: Nvidia の GPU を使った深層学習 …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="「深層学習と自然言語処理」オックスフォード大/DeepMind 講義" src="images/oxford-deepnlp-lectures.png"&gt;&lt;/p&gt;
 &lt;p&gt;オックスフォード大の「深層学習と自然言語処理」(&lt;a href="https://github.com/oxford-cs-deepnlp-2017/lectures"&gt;Oxford Deep NLP 2017 course&lt;/a&gt;)の講義メモです。&lt;/p&gt;
 &lt;p&gt;講義ビデオ、スライド、講義の詳細等については、&lt;a href="https://github.com/oxford-cs-deepnlp-2017/lectures"&gt;講義の公式ページ&lt;/a&gt;を参照してください。&lt;/p&gt;
 &lt;h2&gt;目次&lt;/h2&gt;
@@ -3048,4 +3090,4 @@ Goodfellow 氏は GAN のそもそもの生みの親であり、&lt;a href="http
 &lt;td&gt;交絡&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</summary></entry></feed>
+&lt;/table&gt;</content></entry></feed>

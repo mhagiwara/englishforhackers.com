@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>エンジニア・研究者の英語学習</title><link href="http://englishforhackers.com/" rel="alternate"></link><link href="http://englishforhackers.com/feeds/software-engineering.atom.xml" rel="self"></link><id>http://englishforhackers.com/</id><updated>2018-01-01T00:00:00-05:00</updated><entry><title>英語で読む「Google のソフトウェアエンジニアリング」</title><link href="http://englishforhackers.com/read-software-engineering-at-google-in-english.html" rel="alternate"></link><published>2018-01-01T00:00:00-05:00</published><updated>2018-01-01T00:00:00-05:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2018-01-01:read-software-engineering-at-google-in-english.html</id><summary type="html">&lt;p&gt;Google にて10年以上ソフトウェアエンジニアとして働き、現在は最近では text-to-speech の研究に従事しているFergus Henderson氏による&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>エンジニア・研究者の英語学習 - Software Engineering</title><link href="http://englishforhackers.com/" rel="alternate"></link><link href="http://englishforhackers.com/feeds/software-engineering.atom.xml" rel="self"></link><id>http://englishforhackers.com/</id><updated>2018-01-01T00:00:00-05:00</updated><entry><title>英語で読む「Google のソフトウェアエンジニアリング」</title><link href="http://englishforhackers.com/read-software-engineering-at-google-in-english.html" rel="alternate"></link><published>2018-01-01T00:00:00-05:00</published><updated>2018-01-01T00:00:00-05:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2018-01-01:/read-software-engineering-at-google-in-english.html</id><summary type="html">&lt;p&gt;Google にて10年以上ソフトウェアエンジニアとして働き、現在は最近では text-to-speech の研究に従事しているFergus Henderson氏による&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://arxiv.org/pdf/1702.01715.pdf"&gt;Software Engineering at Google&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;という記事。Google のソフトウェアエンジニアリングのプロセスや文化が簡単にまとまっていて参考になる点も多いと思います。主要なポイントを簡単にまとめると：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;単一の巨大なリポジトリ。どのエンジニアでも（検索ランキングやセキュリティなどに関わる重要な部分を除き）自由にチェックアウトしてコードが読める。&lt;/li&gt;
+&lt;li&gt;分散ビルドシステム Blaze (100〜1000台のサーバーで分散ビルド・テスト) キャッシュにより高速なコンパイルを実現。&lt;/li&gt;
+&lt;li&gt;厳格なコードレビュー文化。メインのリポジトリにコミットするコードは必ずコードレビューを経なければいけない。&lt;/li&gt;
+&lt;li&gt;ユニットテスト、負荷テスト。&lt;/li&gt;
+&lt;li&gt;スタイルガイド、５つの公式言語(C++, Java, Python, Go, JavaScript)のサポート。&lt;/li&gt;
+&lt;li&gt;頻繁なリリース（１，２週間ペース） リリースの自動化、ステージング環境における本番トラフィックを使った統合テスト。&lt;/li&gt;
+&lt;li&gt;リリース承認プロセス・ツール。&lt;/li&gt;
+&lt;li&gt;ポストモーテム：大きな障害が起きた時に書く文書。影響（クエリ数や経済的損失）、再発防止策などを書く。&lt;/li&gt;
+&lt;li&gt;数年ごとにソフトウェアの書き直し。&lt;/li&gt;
+&lt;li&gt;20 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Google にて10年以上ソフトウェアエンジニアとして働き、現在は最近では text-to-speech の研究に従事しているFergus Henderson氏による&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://arxiv.org/pdf/1702.01715.pdf"&gt;Software Engineering at Google&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;という記事。Google のソフトウェアエンジニアリングのプロセスや文化が簡単にまとまっていて参考になる点も多いと思います。主要なポイントを簡単にまとめると：&lt;/p&gt;
 &lt;ul&gt;
@@ -81,4 +94,4 @@
 &lt;td&gt;解雇&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</summary></entry></feed>
+&lt;/table&gt;</content></entry></feed>
