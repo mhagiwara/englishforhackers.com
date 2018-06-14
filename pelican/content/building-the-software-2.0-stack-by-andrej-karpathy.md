@@ -1,4 +1,4 @@
-Title: テスラ自動車 人工知能部門長のアンドレイ・カルパシー氏による「ソフトウェア 2.0 スタックの開発」
+Title: テスラ自動車 人工知能部門長のアンドレイ・カルパシー氏による「ソフトウェア 2.0 スタックの開発」最新講演
 Date: 2018-06-13 00:00
 Category: Deep Learning
 slug: building-the-software-2.0-stack-by-andrej-karpathy
