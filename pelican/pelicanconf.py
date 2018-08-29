@@ -107,15 +107,15 @@ CUSTOM_CSS = 'static/custom.css'
 
 USE_LESS = True
 
-# GOOGLE_ADSENSE = {
-#     'ca_id': 'ca-pub-6625957038449899',
-#     'page_level_ads': True,
-#     'ads': {
-#         'aside': '5340595560',
-#         'main_menu': '',
-#         'index_top': '',
-#         'index_bottom': '9584371569',
-#         'article_top': '',
-#         'article_bottom': '7257980762',
-#     }
-# }
+GOOGLE_ADSENSE = {
+    'ca_id': 'ca-pub-7401771876348738',
+    'page_level_ads': True,
+    'ads': {
+        'aside': '',
+        'main_menu': '',
+        'index_top': '',
+        'index_bottom': '',
+        'article_top': '3498095147',
+        'article_bottom': '3498095147',
+    }
+}
