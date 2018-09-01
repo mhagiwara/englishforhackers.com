@@ -115,7 +115,7 @@ GOOGLE_ADSENSE = {
         'main_menu': '',
         'index_top': '',
         'index_bottom': '',
-        'article_top': '3498095147',
-        'article_bottom': '3498095147',
+        'article_top': '',
+        'article_bottom': '',
     }
 }
