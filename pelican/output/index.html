@@ -98,6 +98,63 @@
 
 <article>
   <header>
+    <h2><a href="http://englishforhackers.com/david-silver-reinforcement-learning-lecture3.html">動的計画法を使った計画 - Google DeepMind の David Silver 氏による強化学習コース 講義3</a></h2>
+    <p>
+        Posted on 2018-09-03(月) in <a href="http://englishforhackers.com/category/reinforcement-learning.html">Reinforcement Learning</a>
+
+
+
+    </p>
+  </header>
+  <div>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<p>「無料でアクセスできる最高の強化学習のコース」と名高い、Google DeepMind / University College London の David Silver 氏による強化学習のコース。<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html">こちらのページから、全ての講義スライドと講義ビデオが見られる</a>。以下は、講義3 のメモです。</p>
+<ul>
+<li>
+<p>はじめに</p>
+<ul>
+<li>動的計画法<ul>
+<li>「動的」: 逐次的、時間</li>
+<li>「計画」≒ 方策</li>
+</ul>
+</li>
+<li>動的計画法がいつ使えるか<ul>
+<li>最適なサブ構造に分解し、そこから最適解が求められる場合<ul>
+<li>例: グラフの最短経路問題</li>
+</ul>
+</li>
+<li>サブ問題がお互いに関係しており、何回も現れる場合 → キャッシュできる</li>
+<li>MDPはこの両方を満たす<ul>
+<li>ベルマン方程式</li>
+<li>問題の再帰的な分解</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>例<ul>
+<li>スケジュール</li>
+<li>文字列アルゴリズム</li>
+<li>グラフアルゴリズム</li>
+<li>グラフィカルアルゴリズム</li>
+<li>生物情報学</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>動的計画法を使った計画</p>
+<ul>
+<li>MDP の情報が全て分かっている前提</li>
+<li>予測: MDP と方策 \( \pi \) が分かっている時に、価値関数 \( v_ …</li></ul></li></ul>
+      <br>
+      <a class="btn" href="http://englishforhackers.com/david-silver-reinforcement-learning-lecture3.html">  Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://englishforhackers.com/david-silver-reinforcement-learning-lecture2.html">マルコフ決定過程 (MDP) - Google DeepMind の David Silver 氏による強化学習コース 講義2</a></h2>
     <p>
         Posted on 2018-09-02(日) in <a href="http://englishforhackers.com/category/reinforcement-learning.html">Reinforcement Learning</a>
@@ -435,54 +492,6 @@
 <li>ルール7. ヒューリスティックを素性に変換するか、外部的に扱う …</li></ul></li></ul>
       <br>
       <a class="btn" href="http://englishforhackers.com/rules-of-machine-learning-best-practices-for-ml-engineering.html">  Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://englishforhackers.com/nips-2016-generative-adversarial-networks-tutorial-ian-goodfellow.html">GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016 まとめ　- Ian Goodfellow</a></h2>
-    <p>
-        Posted on 2018-02-28(水) in <a href="http://englishforhackers.com/category/deep-learning.html">Deep Learning</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p><a href="https://www.youtube.com/watch?v=AJVyzd0rqdc">Ian Goodfellow による、GAN (Generative Adversarial Network; 敵対的生成ネットワーク) のチュートリアル。</a>
-Goodfellow 氏は GAN のそもそもの生みの親であり、<a href="http://www.deeplearningbook.org/">教科書「Deep Learning」</a>の著者としても有名。
-２時間と、とても長い盛りだくさんのチュートリアルだが、分かりやすく、具体例やコツなどの満載なので、とても参考になる。</p>
-<p><img alt="GAN (敵対的生成ネットワーク) チュートリアル @ NIPS 2016" src="images/nips-2016-gan-tutorial.png"></p>
-<ul>
-<li>
-<p>生成モデリング</p>
-<ul>
-<li>訓練データから確率分布の表現を得る<ul>
-<li>密度推定</li>
-<li>サンプル生成</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>なぜ生成モデルを研究するか</p>
-<ul>
-<li>これまでの機械学習　１つの入力に対して１つの出力</li>
-<li>高次元確率分布は重要な対象</li>
-<li>強化学習の未来、計画をシミュレーションできる</li>
-<li>欠損値の扱い、半教師あり学習</li>
-<li>マルチモーダル出力<ul>
-<li>例：ビデオの次のフレームを予測<ul>
-<li>多くの可能性があるので、ぼやけた画像になってしまう</li>
-</ul>
-</li>
-<li>画像超解像技術</li>
-<li>iGAN → 人間が線画を書くだけで、写真クオリティの画像を生成</li>
-<li>画像→画像翻訳　条件付きGAN<ul>
-<li>線画→写真、航空写真→地図 …</li></ul></li></ul></li></ul></li></ul>
-      <br>
-      <a class="btn" href="http://englishforhackers.com/nips-2016-generative-adversarial-networks-tutorial-ian-goodfellow.html">  Continue reading
 </a>
   </div>
 </article>
