@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet/less" type="text/css" href="http://englishforhackers.com/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://englishforhackers.com/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://englishforhackers.com/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://englishforhackers.com/static/custom.css" rel="stylesheet">
+
+    <link href="http://englishforhackers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="エンジニア・研究者の英語学習 Atom">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Masato Hagiwara" />
+<meta name="description" content="「無料でアクセスできる最高の強化学習のコース」と名高い、Google DeepMind / University College London の David Silver 氏による強化学習のコース。こちらのページから、全ての講義スライドと講義ビデオが見られる。以下は、講義6 のメモです。 はじめに 大規模な強化学習 バックギャモン: \( 10^{20} \) 個の状態 囲碁: \( 10^{170} \) 個の状態 ヘリコプター: 連続的な状態 → もはや参照テーブルを作ることができない 価値 \( V(s) \) もしくは \( Q(s, a) \) テーブルが巨大になってメモリに載らない、もしくは載ったとしてもスパースすぎて学習が遅い 関数近似 \( v_\pi(s) \) を \( \widehat{v} (s, {\bf w})\)で近似 \( q_ …" />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="エンジニア・研究者の英語学習"/>
+<meta property="og:title" content="価値関数の近似 - Google DeepMind の David Silver 氏による強化学習コース 講義6"/>
+<meta property="og:description" content="「無料でアクセスできる最高の強化学習のコース」と名高い、Google DeepMind / University College London の David Silver 氏による強化学習のコース。こちらのページから、全ての講義スライドと講義ビデオが見られる。以下は、講義6 のメモです。 はじめに 大規模な強化学習 バックギャモン: \( 10^{20} \) 個の状態 囲碁: \( 10^{170} \) 個の状態 ヘリコプター: 連続的な状態 → もはや参照テーブルを作ることができない 価値 \( V(s) \) もしくは \( Q(s, a) \) テーブルが巨大になってメモリに載らない、もしくは載ったとしてもスパースすぎて学習が遅い 関数近似 \( v_\pi(s) \) を \( \widehat{v} (s, {\bf w})\)で近似 \( q_ …"/>
+<meta property="og:locale" content="ja_JP"/>
+<meta property="og:url" content="http://englishforhackers.com/david-silver-reinforcement-learning-lecture6.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-09-06 00:00:00-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://englishforhackers.com/author/masato-hagiwara.html">
+<meta property="article:section" content="Reinforcement Learning"/>
+<meta property="og:image" content="http://masatohagiwara.net/face.jpg">
+
+  <title>価値関数の近似 - Google DeepMind の David Silver 氏による強化学習コース 講義6 &ndash; エンジニア・研究者の英語学習</title>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7401771876348738",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://englishforhackers.com">
+        <img src="http://masatohagiwara.net/face.jpg" alt="エンジニア・研究者の<br/>英語学習" title="エンジニア・研究者の<br/>英語学習">
+      </a>
+      <h1><a href="http://englishforhackers.com">エンジニア・研究者の<br/>英語学習</a></h1>
+
+<p>ソフトウェア・エンジニアや研究者のための英語学習情報。講演/トーク・技術記事・論文などの紹介</p>
+      <nav>
+        <ul class="list">
+
+          <li><a href="http://masatohagiwara.net/" target="_blank">個人ページ</a></li>
+          <li><a href="http://www.duolingo.com/" target="_blank">Duolingo</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffbTFvdUXJhN4jTOmylcIRvlntKmaYVkIbYPrbBCPm0iC9Sw/viewform?usp=sf_link" target="_blank">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-github" href="https://github.com/mhagiwara" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/mhagiwara" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-rss" href="feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://englishforhackers.com">  Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://englishforhackers.com/feeds/all.atom.xml">  Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="david-silver-reinforcement-learning-lecture6">価値関数の近似 - Google DeepMind の David Silver 氏による強化学習コース 講義6</h1>
+    <p>
+        Posted on 2018-09-06(木) in <a href="http://englishforhackers.com/category/reinforcement-learning.html">Reinforcement Learning</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<p>「無料でアクセスできる最高の強化学習のコース」と名高い、Google DeepMind / University College London の David Silver 氏による強化学習のコース。<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html">こちらのページから、全ての講義スライドと講義ビデオが見られる</a>。以下は、講義6 のメモです。</p>
+<ul>
+<li>
+<p>はじめに</p>
+<ul>
+<li>大規模な強化学習<ul>
+<li>バックギャモン: \( 10^{20} \) 個の状態</li>
+<li>囲碁: \( 10^{170} \) 個の状態</li>
+<li>ヘリコプター: 連続的な状態 → もはや参照テーブルを作ることができない</li>
+</ul>
+</li>
+<li>価値 \( V(s) \) もしくは \( Q(s, a) \)<ul>
+<li>テーブルが巨大になってメモリに載らない、もしくは載ったとしてもスパースすぎて学習が遅い</li>
+</ul>
+</li>
+<li>関数近似<ul>
+<li>\( v_\pi(s) \) を \( \widehat{v} (s, {\bf w})\)で近似</li>
+<li>\( q_\pi(s, a) \) を \( \widehat{q} (s, a, {\bf w}) \) で近似</li>
+</ul>
+</li>
+<li>３つのタイプの関数近似<ul>
+<li>s → 関数 → \( \widehat{v} (s, {\bf w})\)</li>
+<li>s, a → 関数 → \( \widehat{q} (s, a, {\bf w}) \)</li>
+<li>s → 関数 → \( \widehat{q} (s, a_1, {\bf w}), ..., \widehat{q} (s, a_m, {\bf w}) \)</li>
+</ul>
+</li>
+<li>関数の近似法<ul>
+<li>特徴量の線形和 → 微分可能</li>
+<li>ニューラル・ネットワーク → 微分可能</li>
+<li>決定木</li>
+<li>近傍法</li>
+<li>フーリエ・ウェーブレット基底</li>
+</ul>
+</li>
+<li>非定常、iid でない入力</li>
+</ul>
+</li>
+<li>
+<p>逐次的手法</p>
+<ul>
+<li>勾配降下法<ul>
+<li>\( J(w) \) パラメータ \( w \) の微分可能な関数</li>
+<li>J の勾配 \( \nabla_w J(w) = (\frac{\partial J(w)}{\partial w_1}, .. )^T \)</li>
+<li>\( \Delta w \) を、\( \nabla_w J(w) \) に比例して更新</li>
+</ul>
+</li>
+<li>確率的勾配降下法による価値関数の近似<ul>
+<li>価値関数の真の値（オラクル）が分かったとしたら、目的関数 (平均二乗誤差)は、<ul>
+<li>\( J(w) = E_\pi [ (v_\pi(S) - \widehat{v}(S, w))^2 ] \)</li>
+</ul>
+</li>
+<li>期待値ではなく、インスタンス1つづつ更新する<ul>
+<li>\( \Delta W = \alpha(v_\pi(S) - \widehat{v}(S, w)) \nabla_w \widehat{v}(S, w) \)</li>
+</ul>
+</li>
+<li>特殊な場合：関数が特徴量の線形和の場合<ul>
+<li>目的関数は、パラメータ w の二次関数</li>
+<li>確率的勾配降下法によって、大域解が求まる</li>
+<li>テーブル参照は、線形価値関数近似の特殊な場合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>逐次的予測アルゴリズム<ul>
+<li>オラクル \( v_\pi(s) \) の代わりに、ターゲット(予測値)を使う → ターゲットを使って教師あり学習をするのと同様<ul>
+<li>MC: \( G_t \)</li>
+<li>TD(0): \( R_{t+1} + \gamma \widehat{v}(S_{t+1}, w) \)</li>
+<li>TD(λ): \( G^\lambda_t \)</li>
+</ul>
+</li>
+<li>MC<ul>
+<li>\( (S_1, G_1), (S_2, G_2), ... \) を「訓練データ」として使うのと同等</li>
+<li>非線形価値関数を使っている時でも、(局所)最小解に収束する</li>
+</ul>
+</li>
+<li>TD(0)<ul>
+<li>\( R_{t+1} + \gamma \widehat{v}(S_{t+1}, w) \) は、偏りのあるサンプル</li>
+<li>線形TD(0) は、大域解(の近く)に収束する</li>
+</ul>
+</li>
+<li>TD(λ)<ul>
+<li>\( (S_1, G^\lambda_1), (S_2, G^\lambda_2), ... \) を訓練データとして使うのと同等</li>
+<li>前向き観点: \( G^\lambda_t \) を使う</li>
+<li>後向き観点<ul>
+<li>Eligibility Trace: \( \gamma \lambda E_{t-1} + x(S_t) \) → 各特徴量について計算</li>
+<li>\( \Delta_w = \alpha \delta_t E_t \)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>価値関数近似による制御<ul>
+<li>価値関数近似 \( \widehat{q}(s, a, w) \) ＋ ε-貪欲方策</li>
+<li>例: ニューラル・ネットワークにより \( q \) を近似: \( \widehat{q}(S, A, w) = q_\pi(S, A) \)</li>
+<li>上と同じ議論：真の値（オラクル）を仮定し、それとの平均二乗誤差</li>
+<li>素性は、状態 S と行動 A の関数になる</li>
+<li>MC, TD(0), TD(λ) を、上と同様に定義できる</li>
+</ul>
+</li>
+<li>ブートストラップ法を使うべきか？どう λ を設定するか？<ul>
+<li>多くの問題において、\( \lambda = 0.9 \) あたりで性能が最高になる</li>
+</ul>
+</li>
+<li>収束<ul>
+<li>評価<ul>
+<li>TD は、方策オフ型の場合、モデルが線形でも非線形でも、収束しない（発散・振動）する場合がある</li>
+<li>Gradient TD は、この問題を解決</li>
+</ul>
+</li>
+<li>制御<ul>
+<li>最適値に近づくにつれて、「ぶれ」（＝最適値に近づいたり遠ざかったりする）の問題が起こる</li>
+<li>非線形では収束が保証されない</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>バッチ手法</p>
+<ul>
+<li>勾配降下法は、サンプル効率的ではない</li>
+<li>最小二乗予測<ul>
+<li>経験 \( D = { (s_1, v_1^\pi), ..., (s_T, V_T^\pi) } \)</li>
+<li>\( LS(w) = E_D[(v^\pi - \widehat{v}(s, w)^2] \)</li>
+</ul>
+</li>
+<li>経験再生を使った確率的勾配降下法<ul>
+<li>経験 D から \( (s, v^\pi) \) をサンプリング、確率的勾配降下法を適用</li>
+<li>\( LS(w) \) に収束</li>
+</ul>
+</li>
+<li>経験再生を使った DQN (Deep Q-Networks)<ul>
+<li>行動は、ε貪欲方策に従う</li>
+<li>遷移 \( s_t, a_t, r_{t+1}, s_{t+1} \) を、全てメモリー D に保存しておく</li>
+<li>D から、ミニバッチ (64個のインスタンス) を取り出す</li>
+<li>Q-Learning ターゲットをこのミニバッチを使って計算</li>
+<li>ターゲットとQ-network の最小二乗誤差を最小化</li>
+<li>安定化のためのテクニック<ul>
+<li>経験再生を使うと、インスタンス間の相関が減る</li>
+<li>2つのネットワークを使う。片方をフリーズさせ、最新の予測を使うかわりにそのネットワークを使う</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>線形最小二乗誤差予測<ul>
+<li>線形モデルを使えば、閉じた形で解が求まる → 効率的</li>
+<li>MC, TD, TD(λ) と組み合わせて、LSMC, LSTD, LSTD(λ) を得る</li>
+<li>TD に比べて、収束性が向上</li>
+</ul>
+</li>
+<li>線形最小二乗誤差制御 (LSPI)<ul>
+<li>収束性が向上</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'englishforhackers';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+      Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>
+  &copy; Masato Hagiwara 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+</p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-175204-13', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " エンジニア・研究者の英語学習 ",
+  "url" : "http://englishforhackers.com",
+  "image": "http://masatohagiwara.net/face.jpg",
+  "description": "ソフトウェア・エンジニアや研究者のための英語学習情報。講演/トーク・技術記事・論文などの紹介"
+}
+</script>
+
+</body>
+</html>
