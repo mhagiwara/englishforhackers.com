@@ -98,6 +98,50 @@
 
 <article>
   <header>
+    <h2><a href="http://englishforhackers.com/david-silver-reinforcement-learning-lecture7.html">方策勾配法 - Google DeepMind の David Silver 氏による強化学習コース 講義7</a></h2>
+    <p>
+        Posted on 2018-09-07(金) in <a href="http://englishforhackers.com/category/reinforcement-learning.html">Reinforcement Learning</a>
+
+
+
+    </p>
+  </header>
+  <div>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<p>「無料でアクセスできる最高の強化学習のコース」と名高い、Google DeepMind / University College London の David Silver 氏による強化学習のコース。<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html">こちらのページから、全ての講義スライドと講義ビデオが見られる</a>。以下は、講義7 のメモです。</p>
+<ul>
+<li>
+<p>はじめに</p>
+<ul>
+<li>これまでは、価値関数から (例えば、ε貪欲法を使って) 方策を直接生成した</li>
+<li>価値関数をモデル化する代わりに、方策を直接モデル化する<ul>
+<li>\( \pi_\theta(s, a) = P[a | s, \theta] \)</li>
+</ul>
+</li>
+<li>長所<ul>
+<li>良い収束性</li>
+<li>高次元もしくは行動が連続空間の場合</li>
+<li>確率的な方策を学べる</li>
+</ul>
+</li>
+<li>確率的な方策が良い場合<ul>
+<li>じゃんけん<ul>
+<li>もし、方策が決定的なら、相手にそのことを利用されてしまう</li>
+<li>最適な方策は、確率的にランダムな手を出すこと</li>
+</ul>
+</li>
+<li>Aliasing (偽信号 -&gt; 2つ以上の状態がお互いに見分けられない場合) が起こる場合<ul>
+<li>確率的に行動するのが最適</li>
+<li>素性のせいで、環境の表現が制限される場合も …</li></ul></li></ul></li></ul></li></ul>
+      <br>
+      <a class="btn" href="http://englishforhackers.com/david-silver-reinforcement-learning-lecture7.html">  Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="http://englishforhackers.com/david-silver-reinforcement-learning-lecture6.html">価値関数の近似 - Google DeepMind の David Silver 氏による強化学習コース 講義6</a></h2>
     <p>
         Posted on 2018-09-06(木) in <a href="http://englishforhackers.com/category/reinforcement-learning.html">Reinforcement Learning</a>
@@ -449,45 +493,6 @@
 <li>N個の Nビットの数字を …</li></ul></li></ul>
       <br>
       <a class="btn" href="http://englishforhackers.com/ilya-sutskever-meta-learning-self-play.html">  Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://englishforhackers.com/machine-learning-technical-debt.html">機械学習：技術的負債の高金利クレジットカード</a></h2>
-    <p>
-        Posted on 2018-05-04(金) in <a href="http://englishforhackers.com/category/machine-learning.html">Machine Learning</a>
-
-
-
-    </p>
-  </header>
-  <div>
-      <p>Google で機械学習システムの開発に携わる D. Scully 氏らによる</p>
-<p><a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf">Machine Learning: The High-Interest Credit Card of Technical Debt
-(機械学習：技術的負債の高金利クレジットカード)</a></p>
-<p>という論文。機械学習は、複雑なシステムを素早く開発するにあたって非常に強力なツールとなるが、それと同時に、
-大きな技術的負債（メンテナンスコスト）を抱えるリスクがある。そのリスク要因と対処法についてまとめたのが本論文。</p>
-<p>発表当時、日本でも少し話題になったので、日本語で検索するといくつか翻訳を目にすることができますが、
-ここでは、あらためて抄訳を試みるとともに、読む上で重要となる単語・表現を最後に紹介したいと思います。</p>
-<p>概要</p>
-<p>機械学習は、複雑なシステムを素早く開発するにあたって非常に強力なツールとなるが、これらのメリットがタダで
-享受できると考えるのは危ない。機械学習を使う場合、システムのレベルで非常に大きな技術的負債（メンテナンスコスト）
-を抱えるリスクがある。</p>
-<ol>
-<li>
-<p>機械学習と複雑なシステム</p>
-<ul>
-<li>
-<p>機械学習パッケージは、通常のコードとして複雑さの問題をはらんでいるのと同時に、
-システムレベルで「隠れた」技術的負債を抱える恐れがある。</p>
-</li>
-<li>
-<p>本論文では、機械学習のコードと、大きなシステムレベルとの間の相互作用に焦点を当てる。
-ここに隠れた技術的負債が溜まりやすい …</p></li></ul></li></ol>
-      <br>
-      <a class="btn" href="http://englishforhackers.com/machine-learning-technical-debt.html">  Continue reading
 </a>
   </div>
 </article>
