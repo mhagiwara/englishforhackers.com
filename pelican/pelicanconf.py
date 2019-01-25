@@ -6,9 +6,9 @@ THEME = '../pelican-themes/Flex'
 
 AUTHOR = 'Masato Hagiwara'
 SITEURL = 'http://localhost:8000'
-SITENAME = u'エンジニア・研究者の英語学習'
-SITETITLE = u'エンジニア・研究者の<br/>英語学習'
-SITESUBTITLE = u'ソフトウェア・エンジニアや研究者のための英語学習情報。講演/トーク・技術記事・論文などの紹介'
+SITENAME = u'エンジニアの英語学習法'
+SITETITLE = u'エンジニアの<br/>英語学習法'
+SITESUBTITLE = u'英語を身につけるためには、興味のある教材を見つけるのが一番。ソフトウェア・エンジニアや研究者のための英語学習情報をお届けします。英語の講演やトーク、講義、記事などの紹介が中心です。'
 SITEDESCRIPTION = SITESUBTITLE
 SITELOGO = 'http://masatohagiwara.net/face.jpg'
 FAVICON = '/images/favicon.ico'
