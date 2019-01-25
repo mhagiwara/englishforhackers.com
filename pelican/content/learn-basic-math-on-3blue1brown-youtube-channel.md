@@ -2,7 +2,7 @@ Title: 教科書より分かりやすい！数学を動画で学ぶ英語YouTube
 Date: 2019-01-24 00:00
 Category: Math
 slug: learn-basic-math-on-3blue1brown-youtube-channel
-Cover: images/3blue1brown.png
+Cover: images/3blue1brown.jpg
 
 <img src="images/3blue1brown.jpg" width="320"/>
 
