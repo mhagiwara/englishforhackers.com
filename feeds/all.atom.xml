@@ -2,20 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>エンジニアの英語学習法</title><link href="http://englishforhackers.com/" rel="alternate"></link><link href="http://englishforhackers.com/feeds/all.atom.xml" rel="self"></link><id>http://englishforhackers.com/</id><updated>2019-03-22T00:00:00-04:00</updated><entry><title>グーグルマップの城壁—データからデータを作り出すAI戦略</title><link href="http://englishforhackers.com/google-maps-moat.html" rel="alternate"></link><published>2019-03-22T00:00:00-04:00</published><updated>2019-03-22T00:00:00-04:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2019-03-22:/google-maps-moat.html</id><summary type="html">&lt;p&gt;グーグルマップが、&lt;a href="https://japanese.engadget.com/2019/03/22/google/"&gt;ゼンリンから自社独自のデータに切り替えたことによるクオリティの低下&lt;/a&gt;が話題になっていますが、グーグルマップが何年も前から、衛星写真やストリートビューなどのデータから、機械学習の手法を駆使して地図データをすごい勢いで充実させていることはあまり知られていません。&lt;/p&gt;
 &lt;p&gt;Google や Apple の地図サービスなどの事情に詳しい Justin O'Beirne 氏による&lt;a href="https://www.justinobeirne.com/google-maps-moat"&gt;「グーグルマップの城壁」&lt;/a&gt;と題されたこの記事では、Google がいかに画像認識と機械学習の技術を駆使し、「データからデータを作り出す」ことに成功し、自社サービスに他社が追いつけないような「城壁」を築くのに成功したか、ということが書かれています。&lt;/p&gt;
 &lt;p&gt;個人的な話ですが、最近、&lt;a href="http://masatohagiwara.net/leaving-startup-and-becoming-independent.html"&gt;機械学習エンジニアとして独立して&lt;/a&gt;から、主にスタートアップ等を対象に、人工知能・機械学習系のプロジェクト戦略についてコンサルティングをしています。特に、機械学習やデータが鍵となるサービスでは、いかにデータを収集し、機械学習の技術を活用しながら新たなデータを生み出したり、競合が追いつけない勢いでプロダクトを改善するか、ということが非常に大切になってきます。その戦略を考える上でも、非常に示唆に富む記事になっています。&lt;/p&gt;
-&lt;p&gt;以下、本記事のまとめです。なお、グーグルマップに関する他の記事を見ていると、例えば Android 上のユーザーの位置情報なども使って、道路の情報を改善していると思われる箇所があるそうです。本記事に書かれた内容以外にも、利用できる様々なデータを使ってグーグルマップを改善していると思われます。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;地図に表示されたトラック&lt;/h2&gt;
-&lt;p&gt;Apple …&lt;/p&gt;</summary><content type="html">&lt;p&gt;グーグルマップが、&lt;a href="https://japanese.engadget.com/2019/03/22/google/"&gt;ゼンリンから自社独自のデータに切り替えたことによるクオリティの低下&lt;/a&gt;が話題になっていますが、グーグルマップが何年も前から、衛星写真やストリートビューなどのデータから、機械学習の手法を駆使して地図データをすごい勢いで充実させていることはあまり知られていません。&lt;/p&gt;
+&lt;p&gt;以下、本記事のまとめです。内容の詳細については、&lt;a href="https://www.justinobeirne.com/google-maps-moat"&gt;オリジナルの記事&lt;/a&gt;をご参照ください。&lt;/p&gt;
+&lt;p&gt;なお、グーグルマップに関する他の記事を見ていると、例えば Android 上のユーザーの位置情報なども使って、道路の情報を改善していると思われる箇所があるそうです。本記事に書かれた内容以外にも …&lt;/p&gt;</summary><content type="html">&lt;p&gt;グーグルマップが、&lt;a href="https://japanese.engadget.com/2019/03/22/google/"&gt;ゼンリンから自社独自のデータに切り替えたことによるクオリティの低下&lt;/a&gt;が話題になっていますが、グーグルマップが何年も前から、衛星写真やストリートビューなどのデータから、機械学習の手法を駆使して地図データをすごい勢いで充実させていることはあまり知られていません。&lt;/p&gt;
 &lt;p&gt;Google や Apple の地図サービスなどの事情に詳しい Justin O'Beirne 氏による&lt;a href="https://www.justinobeirne.com/google-maps-moat"&gt;「グーグルマップの城壁」&lt;/a&gt;と題されたこの記事では、Google がいかに画像認識と機械学習の技術を駆使し、「データからデータを作り出す」ことに成功し、自社サービスに他社が追いつけないような「城壁」を築くのに成功したか、ということが書かれています。&lt;/p&gt;
 &lt;p&gt;個人的な話ですが、最近、&lt;a href="http://masatohagiwara.net/leaving-startup-and-becoming-independent.html"&gt;機械学習エンジニアとして独立して&lt;/a&gt;から、主にスタートアップ等を対象に、人工知能・機械学習系のプロジェクト戦略についてコンサルティングをしています。特に、機械学習やデータが鍵となるサービスでは、いかにデータを収集し、機械学習の技術を活用しながら新たなデータを生み出したり、競合が追いつけない勢いでプロダクトを改善するか、ということが非常に大切になってきます。その戦略を考える上でも、非常に示唆に富む記事になっています。&lt;/p&gt;
-&lt;p&gt;以下、本記事のまとめです。なお、グーグルマップに関する他の記事を見ていると、例えば Android 上のユーザーの位置情報なども使って、道路の情報を改善していると思われる箇所があるそうです。本記事に書かれた内容以外にも、利用できる様々なデータを使ってグーグルマップを改善していると思われます。&lt;/p&gt;
+&lt;p&gt;以下、本記事のまとめです。内容の詳細については、&lt;a href="https://www.justinobeirne.com/google-maps-moat"&gt;オリジナルの記事&lt;/a&gt;をご参照ください。&lt;/p&gt;
+&lt;p&gt;なお、グーグルマップに関する他の記事を見ていると、例えば Android 上のユーザーの位置情報なども使って、道路の情報を改善していると思われる箇所があるそうです。本記事に書かれた内容以外にも、利用できる様々なデータを使ってグーグルマップを改善していると思われます。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2&gt;地図に表示されたトラック&lt;/h2&gt;
 &lt;p&gt;Apple など他の地図サービスと、グーグルマップを比較してすぐ気がつくのは、建物の充実度である。本記事の執筆の２〜３年前にはまだこれらの建物は表示されていなかったことから、2016年〜2017年にかけて徐々に追加されていったということが分かる。&lt;/p&gt;
 &lt;p&gt;しかし、グーグルマップに表示されているのは、実は民家や商業ビルなどの単なる「建物」だけではないことが分かる。公園の小屋や、なんと駐車してあるトラックなどまでが含まれているからだ。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
     &lt;img src="images/google-map-trailers.jpg" width="80%"/&gt;
-    &lt;figcaption&gt;地図に表示された駐車してあるトラック&lt;/figcaption&gt;
+    &lt;figcaption&gt;地図に表示された駐車してあるトラック © 2017 Justin O’Beirne&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;他にも、例えば教会の玄関の階段や、高層ビルの屋上のエアコンの室外機までもが地図に表示されている。数十人〜数百人しか住民が居ないような小さな「村」でも、全ての民家・商業施設の形が地図から見てとれる。それと比べて、Apple の地図は、シカゴやロサンゼルス、ニューヨークなど大都市にさえ、建物が全然表示されていないようなところもある。&lt;/p&gt;
@@ -25,11 +24,6 @@
 &lt;p&gt;これらの建物のモデルは、高さの詳細な情報も含め、航空写真を撮影し、画像認識の技術を使って建物の形を作ることでアルゴリズムによって作られています。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;ということで、Google は地図に表示されている建築物の形を、航空・衛星写真から作り出して、地図に追加しているのだ。&lt;/p&gt;
-&lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-buildings.png" width="80%"/&gt;
-    &lt;figcaption&gt;航空・衛星写真から建物の形を作り出す&lt;/figcaption&gt;
-&lt;/figure&gt;
-
 &lt;p&gt;しかも、驚くべきはその追加の速さである。追加が始まって2年も経たないうちに、アメリカの半分以上の建物の追加が終わっていた。これは、10年以上かかっているストリートビューに比べると驚異的である。&lt;/p&gt;
 &lt;h2&gt;「見どころエリア」情報&lt;/h2&gt;
 &lt;p&gt;サンフランシスコなどの大都市はおろか、どのような規模の都市でも、レストランや商店が集まっているような「商店街」的な通りがある。特に旅行などで街を訪れた場合、そのような情報は重要であるが、近年まで、グーグルマップであっても、オンラインの地図サービスを使ってそのような場所を知ることは難しかった。地図を見ても、通りと区画が表示されるだけで、どの通りに商店街のような場所があるかどうかが分からないのだ。&lt;/p&gt;
@@ -38,23 +32,18 @@
 &lt;p&gt;グーグルマップを良く見ると、都市の中心部など、建物などが周りの地域に比べて密集している部分は、少し濃い灰色で表示されていることが分かる。これと同様に、商店街など、レストランや商店が集まっている場所「見どころエリア」の情報を、オレンジ色に着色することによって表現し始めたのだ。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
     &lt;img src="images/google-map-aoi.png" width="80%"/&gt;
-    &lt;figcaption&gt;地図にオレンジで表示された「見どころエリア」&lt;/figcaption&gt;
+    &lt;figcaption&gt;地図にオレンジで表示された「見どころエリア」 © 2017 Justin O’Beirne&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;このように、「見どころエリア」情報の見られる都市は、サンフランシスコなどの大都市に限った話ではない。筆者の出身地のような小さな町まで、世界中の何千もの都市に対して、この「見どころエリア」を追加したのだ。&lt;/p&gt;
 &lt;p&gt;一点確かなのは、グーグルマップは、レストランや飲み屋、商店などの情報を使って、この「見どころエリア」を決めているようだ。ただ、どうもそれだけではない。良く見ると、この「見どころエリア」は、いびつな形をしているところがある。縮尺を調整して良く見てみると、なんとこの「見どころエリア」のいびつな形は、上で見た「建築物」の形と一致しているのである。&lt;/p&gt;
-&lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-orange-buildings.png" width="100%"/&gt;
-    &lt;figcaption&gt;「見どころエリア」の元となるオレンジ色の建物&lt;/figcaption&gt;
-&lt;/figure&gt;
-
 &lt;p&gt;つまり、グーグルマップは、レストランや商店などを含んでいる建物をオレンジ色に着色し、そのオレンジ色の建物が集まっているところを、「見どころエリア」としているのである。&lt;/p&gt;
 &lt;h2&gt;副産物の副産物&lt;/h2&gt;
 &lt;p&gt;ここで面白いのは、この「見どころエリア」の元となった建物も、元はといえば、航空・衛星写真から副産物として生成されたものだということだ。&lt;/p&gt;
 &lt;p&gt;また、&lt;a href="https://www.justinobeirne.com/a-year-of-google-maps-and-apple-maps"&gt;前にも書いたように&lt;/a&gt;、Google は、画像認識と機械学習の技術を使って、ストリートビューの画像から、商店などの名前や場所を抽出しているということだ。つまり、「見どころエリア」の元となったレストランや商店などの場所も、元はといえば、ストリートビューの副産物ということになる。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
     &lt;img src="images/google-map-byproducts.png" width="100%"/&gt;
-    &lt;figcaption&gt;副産物の副産物としての見どころエリア&lt;/figcaption&gt;
+    &lt;figcaption&gt;副産物の副産物としての見どころエリア © 2017 Justin O’Beirne&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;以上をまとめると、なんと、この「見どころエリア」は、それぞれ航空・衛星写真とストリートビューの副産物としての建物と商店の位置情報から、さらに副産物として生成されたものだということになる。&lt;/p&gt;
@@ -64,11 +53,7 @@
 &lt;p&gt;グーグルマップが「見どころエリア」を追加し始める４年前には、航空・衛星写真からの建築物の抽出と、3D モデルの再現に取り組んでいたのである。しかし、Apple の方は、航空・衛星写真という同じデータを所有しながらも、画像から建築物の抽出という作業はしておらず、その結果、地図に現れる情報には、歴然とした差が生まれている。&lt;/p&gt;
 &lt;p&gt;また、見どころエリアのもう一つの材料であるストリートビューの画像についても、なんと 800億枚もの画像を解析し、商店の場所などの情報を抽出しているのだ。これによって、例えば同じ住所のビルに複数の店が並んで入っているような複雑な例でも、グーグルマップでは、それぞれの店の正確な位置が地図上に反映されている。一方、Apple の地図上では一つの場所にまとめられてしまっている。&lt;/p&gt;
 &lt;p&gt;Apple も、2015年ごろになってミニバンを走らせ、街の画像情報の収集を始めているが、その時点で、2008年から同様の画像情報の収集を始めた Google との間には、実に6年もの開きが出てしまっていたのだ。&lt;/p&gt;
-&lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-stages.png" width="100%"/&gt;
-    &lt;figcaption&gt;Google vs Apple の各ステージ&lt;/figcaption&gt;
-&lt;/figure&gt;
-
+&lt;p&gt;Google が、「抽出された機能から、新しい機能を作る」という、最も進んだステージ3の段階にあるとすれば、Apple は「データを収集する」という、ステージ1の段階にしかない。&lt;/p&gt;
 &lt;p&gt;Google が先行して、様々な分野で、大量のデータを集めたので、今度はそのデータを処理・加工し、Apple がとても追いつけないような機能を地図に付けているのである。これが、グーグルマップの「城壁」である。&lt;/p&gt;</content></entry><entry><title>教科書より分かりやすい！数学を動画で学ぶ英語YouTubeチャネル 3Blue1Brown がオススメ</title><link href="http://englishforhackers.com/learn-basic-math-on-3blue1brown-youtube-channel.html" rel="alternate"></link><published>2019-01-24T00:00:00-05:00</published><updated>2019-01-24T00:00:00-05:00</updated><author><name>Masato Hagiwara</name></author><id>tag:englishforhackers.com,2019-01-24:/learn-basic-math-on-3blue1brown-youtube-channel.html</id><summary type="html">&lt;p&gt;&lt;img src="images/3blue1brown.jpg" width="320"/&gt;&lt;/p&gt;
 &lt;p&gt;「どの教科書より圧倒的に分かりやすい」&lt;/p&gt;
 &lt;p&gt;「なんでもっと早くこれを知らなかったのか」&lt;/p&gt;
