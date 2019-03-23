@@ -14,7 +14,7 @@
 &lt;p&gt;Apple など他の地図サービスと、グーグルマップを比較してすぐ気がつくのは、建物の充実度である。本記事の執筆の２〜３年前にはまだこれらの建物は表示されていなかったことから、2016年〜2017年にかけて徐々に追加されていったということが分かる。&lt;/p&gt;
 &lt;p&gt;しかし、グーグルマップに表示されているのは、実は民家や商業ビルなどの単なる「建物」だけではないことが分かる。公園の小屋や、なんと駐車してあるトラックなどまでが含まれているからだ。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-trailers.jpg" width="60%"/&gt;
+    &lt;img src="images/google-map-trailers.jpg" width="80%"/&gt;
     &lt;figcaption&gt;地図に表示された駐車してあるトラック&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -26,7 +26,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;ということで、Google は地図に表示されている建築物の形を、航空・衛星写真から作り出して、地図に追加しているのだ。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-buildings.png" width="60%"/&gt;
+    &lt;img src="images/google-map-buildings.png" width="80%"/&gt;
     &lt;figcaption&gt;航空・衛星写真から建物の形を作り出す&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -37,14 +37,14 @@
 &lt;p&gt;この問題を、Google はどのように解決したのだろうか。&lt;/p&gt;
 &lt;p&gt;グーグルマップを良く見ると、都市の中心部など、建物などが周りの地域に比べて密集している部分は、少し濃い灰色で表示されていることが分かる。これと同様に、商店街など、レストランや商店が集まっている場所「見どころエリア」の情報を、オレンジ色に着色することによって表現し始めたのだ。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-aoi.png" width="60%"/&gt;
+    &lt;img src="images/google-map-aoi.png" width="80%"/&gt;
     &lt;figcaption&gt;地図にオレンジで表示された「見どころエリア」&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;このように、「見どころエリア」情報の見られる都市は、サンフランシスコなどの大都市に限った話ではない。筆者の出身地のような小さな町まで、世界中の何千もの都市に対して、この「見どころエリア」を追加したのだ。&lt;/p&gt;
 &lt;p&gt;一点確かなのは、グーグルマップは、レストランや飲み屋、商店などの情報を使って、この「見どころエリア」を決めているようだ。ただ、どうもそれだけではない。良く見ると、この「見どころエリア」は、いびつな形をしているところがある。縮尺を調整して良く見てみると、なんとこの「見どころエリア」のいびつな形は、上で見た「建築物」の形と一致しているのである。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-orange-buildings.png" width="80%"/&gt;
+    &lt;img src="images/google-map-orange-buildings.png" width="100%"/&gt;
     &lt;figcaption&gt;「見どころエリア」の元となるオレンジ色の建物&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -53,7 +53,7 @@
 &lt;p&gt;ここで面白いのは、この「見どころエリア」の元となった建物も、元はといえば、航空・衛星写真から副産物として生成されたものだということだ。&lt;/p&gt;
 &lt;p&gt;また、&lt;a href="https://www.justinobeirne.com/a-year-of-google-maps-and-apple-maps"&gt;前にも書いたように&lt;/a&gt;、Google は、画像認識と機械学習の技術を使って、ストリートビューの画像から、商店などの名前や場所を抽出しているということだ。つまり、「見どころエリア」の元となったレストランや商店などの場所も、元はといえば、ストリートビューの副産物ということになる。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-byproducts.png" width="80%"/&gt;
+    &lt;img src="images/google-map-byproducts.png" width="100%"/&gt;
     &lt;figcaption&gt;副産物の副産物としての見どころエリア&lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -65,7 +65,7 @@
 &lt;p&gt;また、見どころエリアのもう一つの材料であるストリートビューの画像についても、なんと 800億枚もの画像を解析し、商店の場所などの情報を抽出しているのだ。これによって、例えば同じ住所のビルに複数の店が並んで入っているような複雑な例でも、グーグルマップでは、それぞれの店の正確な位置が地図上に反映されている。一方、Apple の地図上では一つの場所にまとめられてしまっている。&lt;/p&gt;
 &lt;p&gt;Apple も、2015年ごろになってミニバンを走らせ、街の画像情報の収集を始めているが、その時点で、2008年から同様の画像情報の収集を始めた Google との間には、実に6年もの開きが出てしまっていたのだ。&lt;/p&gt;
 &lt;figure style="text-align: center"&gt;
-    &lt;img src="images/google-map-stages.png" width="80%"/&gt;
+    &lt;img src="images/google-map-stages.png" width="100%"/&gt;
     &lt;figcaption&gt;Google vs Apple の各ステージ&lt;/figcaption&gt;
 &lt;/figure&gt;
 
