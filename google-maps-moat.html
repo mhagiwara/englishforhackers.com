@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet/less" type="text/css" href="http://englishforhackers.com/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://englishforhackers.com/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://englishforhackers.com/theme/font-awesome/css/font-awesome.min.css">
+
+    <link href="http://englishforhackers.com/static/custom.css" rel="stylesheet">
+
+    <link href="http://englishforhackers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="エンジニアの英語学習法 Atom">
+
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="author" content="Masato Hagiwara" />
+<meta name="description" content="グーグルマップが、ゼンリンから自社独自のデータに切り替えたことによるクオリティの低下が話題になっていますが、グーグルマップが何年も前から、衛星写真やストリートビューなどのデータから、機械学習の手法を駆使して地図データをすごい勢いで充実させていることはあまり知られていません。 Google や Apple の地図サービスなどの事情に詳しい Justin O'Beirne 氏による「グーグルマップの城壁」と題されたこの記事では、Google がいかに画像認識と機械学習の技術を駆使し、「データからデータを作り出す」ことに成功し、自社サービスに他社が追いつけないような「城壁」を築くのに成功したか、ということが書かれています。 個人的な話ですが、最近、機械学習エンジニアとして独立してから、主にスタートアップ等を対象に、人工知能・機械学習系のプロジェクト戦略についてコンサルティングをしています。特に、機械学習やデータが鍵となるサービスでは、いかにデータを収集し、機械学習の技術を活用しながら新たなデータを生み出したり、競合が追いつけない勢いでプロダクトを改善するか、ということが非常に大切になってきます。その戦略を考える上でも、非常に示唆に富む記事になっています。 以下、本記事のまとめです。なお、グーグルマップに関する他の記事を見ていると、例えば Android 上のユーザーの位置情報なども使って、道路の情報を改善していると思われる箇所があるそうです。本記事に書かれた内容以外にも、利用できる様々なデータを使ってグーグルマップを改善していると思われます。 地図に表示されたトラック Apple …" />
+<meta name="keywords" content="">
+<meta property="og:site_name" content="エンジニアの英語学習法"/>
+<meta property="og:title" content="グーグルマップの城壁—データからデータを作り出すAI戦略"/>
+<meta property="og:description" content="グーグルマップが、ゼンリンから自社独自のデータに切り替えたことによるクオリティの低下が話題になっていますが、グーグルマップが何年も前から、衛星写真やストリートビューなどのデータから、機械学習の手法を駆使して地図データをすごい勢いで充実させていることはあまり知られていません。 Google や Apple の地図サービスなどの事情に詳しい Justin O'Beirne 氏による「グーグルマップの城壁」と題されたこの記事では、Google がいかに画像認識と機械学習の技術を駆使し、「データからデータを作り出す」ことに成功し、自社サービスに他社が追いつけないような「城壁」を築くのに成功したか、ということが書かれています。 個人的な話ですが、最近、機械学習エンジニアとして独立してから、主にスタートアップ等を対象に、人工知能・機械学習系のプロジェクト戦略についてコンサルティングをしています。特に、機械学習やデータが鍵となるサービスでは、いかにデータを収集し、機械学習の技術を活用しながら新たなデータを生み出したり、競合が追いつけない勢いでプロダクトを改善するか、ということが非常に大切になってきます。その戦略を考える上でも、非常に示唆に富む記事になっています。 以下、本記事のまとめです。なお、グーグルマップに関する他の記事を見ていると、例えば Android 上のユーザーの位置情報なども使って、道路の情報を改善していると思われる箇所があるそうです。本記事に書かれた内容以外にも、利用できる様々なデータを使ってグーグルマップを改善していると思われます。 地図に表示されたトラック Apple …"/>
+<meta property="og:locale" content="ja_JP"/>
+<meta property="og:url" content="http://englishforhackers.com/google-maps-moat.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-03-22 00:00:00-04:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://englishforhackers.com/author/masato-hagiwara.html">
+<meta property="article:section" content="Machine Learning"/>
+<meta property="og:image" content="http://englishforhackers.com/images/google-map-aoi.png">
+
+  <title>グーグルマップの城壁—データからデータを作り出すAI戦略 &ndash; エンジニアの英語学習法</title>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7401771876348738",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="http://englishforhackers.com">
+        <img src="http://masatohagiwara.net/face.jpg" alt="エンジニアの<br/>英語学習法" title="エンジニアの<br/>英語学習法">
+      </a>
+      <h1><a href="http://englishforhackers.com">エンジニアの<br/>英語学習法</a></h1>
+
+<p>英語を身につけるためには、興味のある教材を見つけるのが一番。ソフトウェア・エンジニアや研究者のための英語学習情報をお届けします。英語の講演やトーク、講義、記事などの紹介が中心です。</p>
+      <nav>
+        <ul class="list">
+
+          <li><a href="http://masatohagiwara.net/" target="_blank">個人ページ</a></li>
+          <li><a href="http://www.duolingo.com/" target="_blank">Duolingo</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSffbTFvdUXJhN4jTOmylcIRvlntKmaYVkIbYPrbBCPm0iC9Sw/viewform?usp=sf_link" target="_blank">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-github" href="https://github.com/mhagiwara" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/mhagiwara" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-rss" href="feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://englishforhackers.com">  Home
+</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://englishforhackers.com/feeds/all.atom.xml">  Atom
+</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+    <h1 id="google-maps-moat">グーグルマップの城壁—データからデータを作り出すAI戦略</h1>
+    <p>
+        Posted on 2019-03-22(金) in <a href="http://englishforhackers.com/category/machine-learning.html">Machine Learning</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>グーグルマップが、<a href="https://japanese.engadget.com/2019/03/22/google/">ゼンリンから自社独自のデータに切り替えたことによるクオリティの低下</a>が話題になっていますが、グーグルマップが何年も前から、衛星写真やストリートビューなどのデータから、機械学習の手法を駆使して地図データをすごい勢いで充実させていることはあまり知られていません。</p>
+<p>Google や Apple の地図サービスなどの事情に詳しい Justin O'Beirne 氏による<a href="https://www.justinobeirne.com/google-maps-moat">「グーグルマップの城壁」</a>と題されたこの記事では、Google がいかに画像認識と機械学習の技術を駆使し、「データからデータを作り出す」ことに成功し、自社サービスに他社が追いつけないような「城壁」を築くのに成功したか、ということが書かれています。</p>
+<p>個人的な話ですが、最近、<a href="http://masatohagiwara.net/leaving-startup-and-becoming-independent.html">機械学習エンジニアとして独立して</a>から、主にスタートアップ等を対象に、人工知能・機械学習系のプロジェクト戦略についてコンサルティングをしています。特に、機械学習やデータが鍵となるサービスでは、いかにデータを収集し、機械学習の技術を活用しながら新たなデータを生み出したり、競合が追いつけない勢いでプロダクトを改善するか、ということが非常に大切になってきます。その戦略を考える上でも、非常に示唆に富む記事になっています。</p>
+<p>以下、本記事のまとめです。なお、グーグルマップに関する他の記事を見ていると、例えば Android 上のユーザーの位置情報なども使って、道路の情報を改善していると思われる箇所があるそうです。本記事に書かれた内容以外にも、利用できる様々なデータを使ってグーグルマップを改善していると思われます。</p>
+<hr>
+<h2>地図に表示されたトラック</h2>
+<p>Apple など他の地図サービスと、グーグルマップを比較してすぐ気がつくのは、建物の充実度である。本記事の執筆の２〜３年前にはまだこれらの建物は表示されていなかったことから、2016年〜2017年にかけて徐々に追加されていったということが分かる。</p>
+<p>しかし、グーグルマップに表示されているのは、実は民家や商業ビルなどの単なる「建物」だけではないことが分かる。公園の小屋や、なんと駐車してあるトラックなどまでが含まれているからだ。</p>
+<figure style="text-align: center">
+    <img src="images/google-map-trailers.jpg" width="60%"/>
+    <figcaption>地図に表示された駐車してあるトラック</figcaption>
+</figure>
+
+<p>他にも、例えば教会の玄関の階段や、高層ビルの屋上のエアコンの室外機までもが地図に表示されている。数十人〜数百人しか住民が居ないような小さな「村」でも、全ての民家・商業施設の形が地図から見てとれる。それと比べて、Apple の地図は、シカゴやロサンゼルス、ニューヨークなど大都市にさえ、建物が全然表示されていないようなところもある。</p>
+<h2>データから3Dモデルを作り出す</h2>
+<p>グーグルマップに建物の 3D モデルが表示され始めたのは、2007年の時点だ。ただ、今のものと比べると、非常に限定された範囲であり、クオリティも全く劣る。しかし 2012年に Google は、詳細な建物の 3D モデルが表示されるエリアの範囲を大幅に拡張したことを<a href="https://maps.googleblog.com/2012/10/expanded-coverage-of-building.html">アナウンス</a>した。その記事の中で、それらをどのようにして作っているかも明らかにしている：</p>
+<blockquote>
+<p>これらの建物のモデルは、高さの詳細な情報も含め、航空写真を撮影し、画像認識の技術を使って建物の形を作ることでアルゴリズムによって作られています。</p>
+</blockquote>
+<p>ということで、Google は地図に表示されている建築物の形を、航空・衛星写真から作り出して、地図に追加しているのだ。</p>
+<figure style="text-align: center">
+    <img src="images/google-map-buildings.png" width="60%"/>
+    <figcaption>航空・衛星写真から建物の形を作り出す</figcaption>
+</figure>
+
+<p>しかも、驚くべきはその追加の速さである。追加が始まって2年も経たないうちに、アメリカの半分以上の建物の追加が終わっていた。これは、10年以上かかっているストリートビューに比べると驚異的である。</p>
+<h2>「見どころエリア」情報</h2>
+<p>サンフランシスコなどの大都市はおろか、どのような規模の都市でも、レストランや商店が集まっているような「商店街」的な通りがある。特に旅行などで街を訪れた場合、そのような情報は重要であるが、近年まで、グーグルマップであっても、オンラインの地図サービスを使ってそのような場所を知ることは難しかった。地図を見ても、通りと区画が表示されるだけで、どの通りに商店街のような場所があるかどうかが分からないのだ。</p>
+<p>地図を使ってこの問題を視覚的に解決するのは難しい。商店名などのラベルを追加しようとすると地図上に表示される情報が多くなりすぎてしまう。また、ラベルが近くなりすぎると、どのラベルがどのランドマークに対応するかを見分けるのが難しくなってしまう。地図の縮尺に応じて、地域の名前や、通りの名前などを取捨選択して表示しなければならない。</p>
+<p>この問題を、Google はどのように解決したのだろうか。</p>
+<p>グーグルマップを良く見ると、都市の中心部など、建物などが周りの地域に比べて密集している部分は、少し濃い灰色で表示されていることが分かる。これと同様に、商店街など、レストランや商店が集まっている場所「見どころエリア」の情報を、オレンジ色に着色することによって表現し始めたのだ。</p>
+<figure style="text-align: center">
+    <img src="images/google-map-aoi.png" width="60%"/>
+    <figcaption>地図にオレンジで表示された「見どころエリア」</figcaption>
+</figure>
+
+<p>このように、「見どころエリア」情報の見られる都市は、サンフランシスコなどの大都市に限った話ではない。筆者の出身地のような小さな町まで、世界中の何千もの都市に対して、この「見どころエリア」を追加したのだ。</p>
+<p>一点確かなのは、グーグルマップは、レストランや飲み屋、商店などの情報を使って、この「見どころエリア」を決めているようだ。ただ、どうもそれだけではない。良く見ると、この「見どころエリア」は、いびつな形をしているところがある。縮尺を調整して良く見てみると、なんとこの「見どころエリア」のいびつな形は、上で見た「建築物」の形と一致しているのである。</p>
+<figure style="text-align: center">
+    <img src="images/google-map-orange-buildings.png" width="80%"/>
+    <figcaption>「見どころエリア」の元となるオレンジ色の建物</figcaption>
+</figure>
+
+<p>つまり、グーグルマップは、レストランや商店などを含んでいる建物をオレンジ色に着色し、そのオレンジ色の建物が集まっているところを、「見どころエリア」としているのである。</p>
+<h2>副産物の副産物</h2>
+<p>ここで面白いのは、この「見どころエリア」の元となった建物も、元はといえば、航空・衛星写真から副産物として生成されたものだということだ。</p>
+<p>また、<a href="https://www.justinobeirne.com/a-year-of-google-maps-and-apple-maps">前にも書いたように</a>、Google は、画像認識と機械学習の技術を使って、ストリートビューの画像から、商店などの名前や場所を抽出しているということだ。つまり、「見どころエリア」の元となったレストランや商店などの場所も、元はといえば、ストリートビューの副産物ということになる。</p>
+<figure style="text-align: center">
+    <img src="images/google-map-byproducts.png" width="80%"/>
+    <figcaption>副産物の副産物としての見どころエリア</figcaption>
+</figure>
+
+<p>以上をまとめると、なんと、この「見どころエリア」は、それぞれ航空・衛星写真とストリートビューの副産物としての建物と商店の位置情報から、さらに副産物として生成されたものだということになる。</p>
+<p>Google は、データからデータを作り出しているのだ。</p>
+<h2>グーグルマップの城壁</h2>
+<p>さて、Apple が自社の地図に同じような変更をすることは可能であろうか。グーグルマップの「見どころエリア」情報は、収集したものではなく、他のデータから生成されたものだ。一方で、Apple には、同じ量と質・スケールで見どころエリアを作るための「材料」が欠如している。</p>
+<p>グーグルマップが「見どころエリア」を追加し始める４年前には、航空・衛星写真からの建築物の抽出と、3D モデルの再現に取り組んでいたのである。しかし、Apple の方は、航空・衛星写真という同じデータを所有しながらも、画像から建築物の抽出という作業はしておらず、その結果、地図に現れる情報には、歴然とした差が生まれている。</p>
+<p>また、見どころエリアのもう一つの材料であるストリートビューの画像についても、なんと 800億枚もの画像を解析し、商店の場所などの情報を抽出しているのだ。これによって、例えば同じ住所のビルに複数の店が並んで入っているような複雑な例でも、グーグルマップでは、それぞれの店の正確な位置が地図上に反映されている。一方、Apple の地図上では一つの場所にまとめられてしまっている。</p>
+<p>Apple も、2015年ごろになってミニバンを走らせ、街の画像情報の収集を始めているが、その時点で、2008年から同様の画像情報の収集を始めた Google との間には、実に6年もの開きが出てしまっていたのだ。</p>
+<figure style="text-align: center">
+    <img src="images/google-map-stages.png" width="80%"/>
+    <figcaption>Google vs Apple の各ステージ</figcaption>
+</figure>
+
+<p>Google が先行して、様々な分野で、大量のデータを集めたので、今度はそのデータを処理・加工し、Apple がとても追いつけないような機能を地図に付けているのである。これが、グーグルマップの「城壁」である。</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'englishforhackers';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+      Please enable JavaScript to view comments.
+
+</noscript>
+</article>
+
+    <footer>
+<p>
+  &copy; Masato Hagiwara 2017 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+</p>
+<p>  Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+         src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-175204-13', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " エンジニアの英語学習法 ",
+  "url" : "http://englishforhackers.com",
+  "image": "http://masatohagiwara.net/face.jpg",
+  "description": "英語を身につけるためには、興味のある教材を見つけるのが一番。ソフトウェア・エンジニアや研究者のための英語学習情報をお届けします。英語の講演やトーク、講義、記事などの紹介が中心です。"
+}
+</script>
+
+</body>
+</html>
