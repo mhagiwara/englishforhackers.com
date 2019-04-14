@@ -2,7 +2,7 @@ Title: あなたはなぜ英語ができないのか — プロジェクトベ�
 Date: 2019-04-12 00:00
 Category: English Learning
 slug: project-based-english-learning
-Cover: 
+Cover: images/pbel-language.jpg
 
 <span style="display:block;text-align:center">
 ![英語学習](images/pbel-language.jpg)
